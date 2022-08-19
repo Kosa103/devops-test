@@ -12,7 +12,7 @@ app.use(express.static(__dirname + '/public'));
 
 
 app.get("/api", (req, res, next) => {
-  res.send("Get request successful. Update 1");
+  res.send("Get request successful. Update 2");
 })
 
 
