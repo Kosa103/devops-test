@@ -35,4 +35,6 @@ jobs:
           REMOTE_USER: ${{ secrets.REMOTE_USER }}
           TARGET: ${{ secrets.REMOTE_TARGET }}
     - name: Schedule restart, stop node processes
-      run: sudo python3 restart.py
+      run: |
+        sudo killall node
+        sudo reboot 2
