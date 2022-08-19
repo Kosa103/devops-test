@@ -34,13 +34,3 @@ jobs:
           REMOTE_PORT: ${{ secrets.REMOTE_PORT }}
           REMOTE_USER: ${{ secrets.REMOTE_USER }}
           TARGET: ${{ secrets.REMOTE_TARGET }}
-
-  deploy:
-
-    runs-on: ubuntu-latest
-
-    steps:
-    - name: Kill node processes, Schedule restart
-      run: |
-        sudo killall node
-        sudo reboot 2
