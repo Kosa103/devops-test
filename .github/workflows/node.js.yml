@@ -34,3 +34,10 @@ jobs:
           REMOTE_PORT: ${{ secrets.REMOTE_PORT }}
           REMOTE_USER: ${{ secrets.REMOTE_USER }}
           TARGET: ${{ secrets.REMOTE_TARGET }}
+  deploy:
+
+      runs-on: ubuntu-latest
+
+      steps:
+      - name: Start server
+        run: node server.js
