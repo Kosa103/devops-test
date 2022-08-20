@@ -24,6 +24,8 @@ jobs:
       run: npm install
     - name: Build npm
       run: npm run build --if-present
+    - name: Start npm
+      run: node server,js
     - name: Test npm
       run: npm test
     - name: Deploy to Server
@@ -34,10 +36,3 @@ jobs:
           REMOTE_PORT: ${{ secrets.REMOTE_PORT }}
           REMOTE_USER: ${{ secrets.REMOTE_USER }}
           TARGET: ${{ secrets.REMOTE_TARGET }}
-  deploy:
-
-      runs-on: ubuntu-latest
-
-      steps:
-      - name: Start server
-        run: node server.js
