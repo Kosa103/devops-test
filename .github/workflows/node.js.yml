@@ -23,5 +23,7 @@ jobs:
         username: ${{ secrets.REMOTE_USER }}
         key: ${{ secrets.SERVER_SSH_KEY }}
         script: |
-          whoami
-          ls -a
+          cd ${{ secrets.REMOTE_PROJECT_PATH }}
+          git pull origin master
+          npm install
+          sudo node server.js
